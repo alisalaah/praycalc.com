@@ -1,0 +1,218 @@
+<head>
+	<title>PrayCalc - Simple and accurate prayer times.</title>
+</head>
+
+<body>
+	{{> header}}
+
+	{{> content}}
+
+	{{> footer}}
+</body>
+
+<template name="header">
+	<header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand"><img src="/logo.png" height="35px" alt="logo"></a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+                    {{> geonavform}}
+					{{> thfnavbutton}}
+                </ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" id="help">Help</a></li>
+					<li><a href="#" id="about">About</a></li>
+					<li><a href="#" id="contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+</template>
+
+<template name="content">
+    <!-- Begin page content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-12 homeBox" id="locbox">
+				<legend>{{city}}<span class="clock">{{clock}}</span></legend>
+				<div id="map-canvas">{{map}}</div>
+			</div>
+
+			<div class="col-md-3 col-sm-6 homeBox" id="ptimes">
+				<legend style="text-align:center">Prayer Times</legend>
+				<span class="date">{{hijri}}</span>
+				{{{showTimes}}}
+			</div>
+
+			<div class="col-md-3 col-sm-6 homeBox" id="stimes">
+				<legend style="text-align:center">Sun Positioning</legend>
+				<span class="date">{{grego}}</span>
+				<div id="stime-points">
+					{{{sunTimes}}}
+				</div>
+				<div id="stime-ranges" style="display:none">
+					{{{sunRanges}}}
+				</div>
+			</div>
+
+		</div>
+	</div>
+</template>
+
+<template name="footer">
+    <footer id="footer" class="footer midnight-blue">
+		<div class="container">
+			<p class="text-muted" style="text-align: center;"><small>&copy;2015 <a href="http://ussunnah.org">us-Sunnah Foundation</a></small></p>
+		</div>
+    </footer>
+</template>
+
+
+<template name="help">
+	<p style="line-height: 110%;">To...</p>
+	<p style="line-height: 110%;text-align:center;"><small style="color:#800;line-height: 110%;">If you would like to make a donation to support our project of proper and accurate prayer times please make a donation below which will go towards development, web hosting and related costs.</small></p>
+	<center>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_donations">
+			<input type="hidden" name="business" value="NCAU69P4PX7MA">
+			<input type="hidden" name="lc" value="US">
+			<input type="hidden" name="item_name" value="PrayCalc Donation">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="no_note" value="1">
+			<input type="hidden" name="no_shipping" value="1">
+			<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHosted">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+	</center>
+</template>
+
+<template name="about">
+	<p style="line-height: 110%;">PrayCalc...</p>
+	<p style="line-height: 110%;text-align:center;"><small style="color:#800;line-height: 110%;">If you would like to make a donation to support our project of proper and accurate prayer times please make a donation below which will go towards development, web hosting and related costs.</small></p>
+	<center>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_donations">
+			<input type="hidden" name="business" value="NCAU69P4PX7MA">
+			<input type="hidden" name="lc" value="US">
+			<input type="hidden" name="item_name" value="PrayCalc Donation">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="no_note" value="1">
+			<input type="hidden" name="no_shipping" value="1">
+			<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHosted">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+	</center>
+</template>
+
+<template name="contact">
+	<p style="line-height: 110%;">Contact form...</p>
+	<p style="line-height: 110%;text-align:center;"><small style="color:#800;line-height: 110%;">If you would like to make a donation to support our project of proper and accurate prayer times please make a donation below which will go towards development, web hosting and related costs.</small></p>
+	<center>
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_donations">
+			<input type="hidden" name="business" value="NCAU69P4PX7MA">
+			<input type="hidden" name="lc" value="US">
+			<input type="hidden" name="item_name" value="PrayCalc Donation">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="no_note" value="1">
+			<input type="hidden" name="no_shipping" value="1">
+			<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHosted">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+	</center>
+</template>
+
+<!--
+	<p style="margin:0"><small style="color:#c00;">If you would like to support our effort to improve calculation tools and make them more flexible and available please consider a donation of any amount to the us-Sunnah Foundation.</small></p>
+	<legend>The PrayCalc Project</legend>
+	<p>The us-Sunnah Foundation is currently researching sun positioning calculations to help improve the currently available prayer time calculation libraries in use by websites today.</p>
+	<p>This site retrieves your current location to calculate accurate prayer times to that specific location using coordinates.  If the globe icon above is blue and the text box is disabled than you are using automatic location - to disable this and type in any location in the world simply click the blue globe to turn off automatic location and then type in any City, State, Country and so on then press enter.  The calculated times on the <a href="/">home page</a> and the <a href="/compare">comparison page</a> will update automatically.  If you run in to any problems with these site (there are known site bugs) click this About page then click another link to go back or refresh.  This may be more accurate than a city wide prayer table due to precision of the location used.  Below we list the prayer times as calculated by the best currently available methods which are in use on all the major Islamic sites calculation sites, yet these methods have the same weakness.  You can see the currently available calculation methods at: <a href="http://praytimes.org/wiki/Calculation_Methods">http://praytimes.org/wiki/Calculation_Methods</a></p>
+	<p>Current methods all use static sun angles while only the equator has a constant sun angle throughout the year. Every where else the angle changes as you approach or depart from the solar equinox (June or December 21).  Unfortunately the  oldest and most popular sites for calculating prayer times use the oldest versions of these static methods which means these prayer times are widespread and adopted by masjids, organizations and even countries for use - printing monthly and yearly schedules and posting them everywhere. IslamicFinder is one of the most popular places for the world to get prayer times from, yet it has the oldest prayer calculation methods of web sites available today - even still listing the ISNA method Fajr angle at 15° though it was updated to 17.5°. See: <a href="http://www.icoproject.org/ISNA-Adopts-New-Angles-for-Fajer-and-Isha_ad-id!81-l!en.ks" target="_blank">http://www.icoproject.org/ISNA-Adopts-New-Angles-for-Fajer-and-Isha_ad-id!81-l!en.ks</a></p>
+	<p>Using the NOAA formula in place of static methods can fix this and has been long accepted by astronomers, militaries, governments and so on with extreme precision.  On the <a href="/">home page</a> of this site (click the logo) we display the full details of these sun positioning calculations from NOAA, NASA, USNO etc. developed methods. While at the equator the angle is 18° year round the further you get from the equator the more this angle fluctuates throughout the year (as you approach and depart from the equinox on June 21st). There are countless scientific sites the explain this out there but you can see a very simple and brief explanation with graphs at: <a href="http://en.wikipedia.org/wiki/Twilight" target="_blank">http://en.wikipedia.org/wiki/Twilight</a></p>
+	<p>The automatic method we are building attempts to combine sun position calculations from NOAA/USNO with Islamic principles of determining the start of prayer times to make one accurate formula that calculates times accurately in any location and at any time of the year, with the correct angles used.  Ironically the set static angles of the other current methods do not (usually) show the absence of Fajr and Isha in the extreme latitudes where twilight never happens in the summer and do not break due to this limitation.  Our method currently accurately detects that these twilights do not exist and will break for now.  The only proper remedy is to translate proper Fiqh rules into a coded solution.  We are in process of implementing these and fixing bugs to make the calculator fully ready.  For now our calculator is fully accurate when it gives a time (not a blank response) and is only having issues with extreme locations (mostly above and below 55° latitude during summers and winters).</p>
+-->
+
+<!--
+	<div id="stime-ranges" style="display:none">
+
+		<div class="row night">
+			<div class="col-lg-6 srname">Night</div>
+			<div class="col-lg-3 srtime">00:00</div>
+			<div class="col-lg-3 srtime">04:45</div>
+		</div>
+
+		<div class="row twilight">
+			<div class="col-lg-6 srname">Astronomical Dawn</div>
+			<div class="col-lg-3 srtime">04:45</div>
+			<div class="col-lg-3 srtime">05:09</div>
+		</div>
+
+		<div class="row twilight">
+			<div class="col-lg-6 srname">Nautical Dawn</div>
+			<div class="col-lg-3 srtime">05:09</div>
+			<div class="col-lg-3 srtime">05:34</div>
+		</div>
+
+		<div class="row twilight">
+			<div class="col-lg-6 srname">Civil Dawn</div>
+			<div class="col-lg-3 srtime">05:34</div>
+			<div class="col-lg-3 srtime">05:55</div>
+		</div>
+
+		<div class="row sunphase">
+			<div class="col-lg-6 srname">Sunrise</div>
+			<div class="col-lg-3 srtime">05:55</div>
+			<div class="col-lg-3 srtime">05:57</div>
+		</div>
+
+		<div class="row daylight">
+			<div class="col-lg-6 srname">Daylight</div>
+			<div class="col-lg-3 srtime">05:57</div>
+			<div class="col-lg-3 srtime">17:50</div>
+		</div>
+
+		<div class="row sunphase">
+			<div class="col-lg-6 srname">Sunset</div>
+			<div class="col-lg-3 srtime">17:50</div>
+			<div class="col-lg-3 srtime">17:52</div>
+		</div>
+
+		<div class="row twilight">
+			<div class="col-lg-6 srname">Civil Dusk</div>
+			<div class="col-lg-3 srtime">17:52</div>
+			<div class="col-lg-3 srtime">18:13</div>
+		</div>
+
+		<div class="row twilight">
+			<div class="col-lg-6 srname">Nautical Dusk</div>
+			<div class="col-lg-3 srtime">18:13</div>
+			<div class="col-lg-3 srtime">18:38</div>
+		</div>
+
+		<div class="row twilight">
+			<div class="col-lg-6 srname">Astronomical Dusk</div>
+			<div class="col-lg-3 srtime">18:38</div>
+			<div class="col-lg-3 srtime">19:02</div>
+		</div>
+
+		<div class="row night">
+			<div class="col-lg-6 srname">Night</div>
+			<div class="col-lg-3 srtime">19:02</div>
+			<div class="col-lg-3 srtime">00:00</div>
+		</div>
+	</div>
+-->
+<!--
+	 <i class="glyphicon glyphicon-time" id="stoggle"></i>
+-->

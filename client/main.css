@@ -1,0 +1,156 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 30px;
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 30px;
+	background-color: #f5f5f5;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+
+body {
+	padding-top: 75px;
+}
+@media (max-width: 979px) {
+	body {
+		padding-top: 0px;
+	}
+}
+.navbar-brand {
+	padding: 9px 21px;
+}
+
+.homeBox {
+	border: 1px solid #2F4154;
+    min-height: 400px;
+}
+
+.homeBox > legend {
+	font-size: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.clock {
+	float: right;
+	font-size: 14px;
+	color: #69d;
+	padding: 0;
+	margin: 5px 0;
+}
+
+#ptimes {
+    font-size: 22px;
+}
+#ptimes>legend {
+    margin: 0;
+}
+#ptimes .date {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #69d;
+    padding: 0;
+    margin: 0 0 8px 0;
+}
+#ptimes .pname {
+    text-align: left;
+}
+#ptimes .ptime {
+    text-align: right;
+}
+#ptimes .sunrise, #ptimes .sunrise-after, #ptimes .sunrise-current {
+    color: #ccc;
+}
+#ptimes .sunrise-after {
+    border-bottom: 1px solid #def;
+}
+#ptimes .current, #ptimes .sunrise-current {
+    background-color: #def;
+}
+#stimes {
+    font-size: 14px;
+    position: relative;
+}
+#stimes>legend {
+    margin: 0;
+}
+#stoggle {
+    float: right;
+    margin: 7px;
+    font-size: 14px;
+    cursor: pointer;
+}
+#stoggle.active {
+    color: #69d;
+}
+#stimes .date {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #69d;
+    padding: 0;
+    margin: 0 0 8px 0;
+}
+#stime-points .spname, #stime-ranges .srname {
+    font-size: .9em;
+    text-align: left;
+}
+#stime-points .sptime, #stime-ranges .srtime {
+    text-align: right;
+}
+#stime-points .night, #stime-ranges .night {
+    background-color: #bfd5dd;
+}
+#stime-points .twilight, #stime-ranges .twilight {
+    background-color: #d0e5ff;
+}
+#stime-points .sunphase, #stime-ranges .sunphase {
+    background-color: #ffdc9c;
+}
+#stime-points .daylight, #stime-ranges .daylight {
+    background-color: #ffed9e;
+}
+
+#tfb12 {
+    border-radius: 5px 0 0 5px;
+}
+#tfb24 {
+    border-radius: 0 5px 5px 0;
+}
+#tfb12, #tfb24 {
+    color: #fff;
+	padding: 0 15px;
+}
+#tfb12.active, #tfb24.active {
+    color: #fff;
+    background-color: #1ABC9C;
+}
+#tfb12:hover, #tfb24:hover {
+    background-color: #7ABC9C;
+}
+
+#geonavli > form > div > input {
+	background-color: #dfe
+}
+#geonavli > form > div > .input-group-btn > button {
+}
+
+.loadinggif {
+    background:url('/ajax-loader.gif') no-repeat right center !important
+}
+
+#map-canvas {
+	height: 325px;
+}
