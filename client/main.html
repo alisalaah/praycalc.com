@@ -77,7 +77,9 @@
 
 
 <template name="help">
-	<p style="line-height: 110%;">To...</p>
+	<p style="line-height: 110%;">For the most accurate times allow the site to detect your location.  If this is enabled you can click the blue globe icon to turn off and type in a manual location.  There are two known issues:</p>
+	<p style="line-height: 110%;">1. If the clock above the map is wrong then this means your local device time is wrong as this uses JavaScript and the time comes from your browser.  Please check your date and time settings making sure first the time zone is correct and then the date and time itself.</p>
+	<p style="line-height: 110%;">2. The times are precise using sun positioning and work for every coordinate.  Other methods use static angles which can be slightly inaccurate.  This inaccuracy actually allows them to work in extreme north (and south) in the summers (and winters), where as this calculator will return a null (blank) answer when Fajr and Isha actually do not happen.  The correct solution by fiqh is not to use a wrong calculation but to look to the closest area to you that does have a Fajr and Isha time.  Thus this will be solved my slowly moving the calculator south (or north) until a time is found and then returning that value (with a notation that this was derived as such).  This feature is still in development.</p>
 	<p style="line-height: 110%;text-align:center;"><small style="color:#800;line-height: 110%;">If you would like to make a donation to support our project of proper and accurate prayer times please make a donation below which will go towards development, web hosting and related costs.</small></p>
 	<center>
 		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -96,7 +98,8 @@
 </template>
 
 <template name="about">
-	<p style="line-height: 110%;">PrayCalc...</p>
+	<p style="line-height: 110%;">PrayCalc uses a dynamic calculation of exact sun positioning for precise prayer times anywhere.  Unfortunately other sites for calculating prayer times use static methods which could be specific to one region and inaccurate for another; or only accurate for part of the year (as twilight times fluctuate throughout the year); yet use the same formula for all calculations. IslamicFinder is one of the most popular places for the world to get prayer times from, yet it has the oldest prayer calculation methods of web sites available today - even still listing the ISNA (static) method for the Fajr angle at 15° though it was updated to 17.5°. See: <a href="http://www.icoproject.org/ISNA-Adopts-New-Angles-for-Fajer-and-Isha_ad-id!81-l!en.ks" target="_blank">http://www.icoproject.org/ISNA-Adopts-New-Angles-for-Fajer-and-Isha_ad-id!81-l!en.ks</a></p>
+	<p style="line-height: 110%;">Using the NOAA formula in place of static methods can fix this and has been long accepted by astronomers, militaries, governments and so on with extreme precision.  We display the full details of these sun positioning calculations from NOAA, NASA, USNO etc. developed methods. While at the equator the angle is 18° year round the further you get from the equator the more this angle fluctuates throughout the year (as you approach and depart from the equinox on June 21st). There are countless scientific sites the explain this out there but you can see a very simple and brief explanation with graphs at: <a href="http://en.wikipedia.org/wiki/Twilight" target="_blank">http://en.wikipedia.org/wiki/Twilight</a></p>
 	<p style="line-height: 110%;text-align:center;"><small style="color:#800;line-height: 110%;">If you would like to make a donation to support our project of proper and accurate prayer times please make a donation below which will go towards development, web hosting and related costs.</small></p>
 	<center>
 		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -115,7 +118,7 @@
 </template>
 
 <template name="contact">
-	<p style="line-height: 110%;">Contact form...</p>
+	<p style="line-height: 110%;">PrayCalc is made by <a href="http://www.facebook.com/alicamarata">Ali Camarata</a> and is a product of the <a href="http://www.facebook.com/ussunnah">us-Sunnah Foundation</a>.  Please follow both pages link and if you have any questions on this project please contact directly via Facebook.</p>
 	<p style="line-height: 110%;text-align:center;"><small style="color:#800;line-height: 110%;">If you would like to make a donation to support our project of proper and accurate prayer times please make a donation below which will go towards development, web hosting and related costs.</small></p>
 	<center>
 		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -141,78 +144,4 @@
 	<p>Current methods all use static sun angles while only the equator has a constant sun angle throughout the year. Every where else the angle changes as you approach or depart from the solar equinox (June or December 21).  Unfortunately the  oldest and most popular sites for calculating prayer times use the oldest versions of these static methods which means these prayer times are widespread and adopted by masjids, organizations and even countries for use - printing monthly and yearly schedules and posting them everywhere. IslamicFinder is one of the most popular places for the world to get prayer times from, yet it has the oldest prayer calculation methods of web sites available today - even still listing the ISNA method Fajr angle at 15° though it was updated to 17.5°. See: <a href="http://www.icoproject.org/ISNA-Adopts-New-Angles-for-Fajer-and-Isha_ad-id!81-l!en.ks" target="_blank">http://www.icoproject.org/ISNA-Adopts-New-Angles-for-Fajer-and-Isha_ad-id!81-l!en.ks</a></p>
 	<p>Using the NOAA formula in place of static methods can fix this and has been long accepted by astronomers, militaries, governments and so on with extreme precision.  On the <a href="/">home page</a> of this site (click the logo) we display the full details of these sun positioning calculations from NOAA, NASA, USNO etc. developed methods. While at the equator the angle is 18° year round the further you get from the equator the more this angle fluctuates throughout the year (as you approach and depart from the equinox on June 21st). There are countless scientific sites the explain this out there but you can see a very simple and brief explanation with graphs at: <a href="http://en.wikipedia.org/wiki/Twilight" target="_blank">http://en.wikipedia.org/wiki/Twilight</a></p>
 	<p>The automatic method we are building attempts to combine sun position calculations from NOAA/USNO with Islamic principles of determining the start of prayer times to make one accurate formula that calculates times accurately in any location and at any time of the year, with the correct angles used.  Ironically the set static angles of the other current methods do not (usually) show the absence of Fajr and Isha in the extreme latitudes where twilight never happens in the summer and do not break due to this limitation.  Our method currently accurately detects that these twilights do not exist and will break for now.  The only proper remedy is to translate proper Fiqh rules into a coded solution.  We are in process of implementing these and fixing bugs to make the calculator fully ready.  For now our calculator is fully accurate when it gives a time (not a blank response) and is only having issues with extreme locations (mostly above and below 55° latitude during summers and winters).</p>
--->
-
-<!--
-	<div id="stime-ranges" style="display:none">
-
-		<div class="row night">
-			<div class="col-lg-6 srname">Night</div>
-			<div class="col-lg-3 srtime">00:00</div>
-			<div class="col-lg-3 srtime">04:45</div>
-		</div>
-
-		<div class="row twilight">
-			<div class="col-lg-6 srname">Astronomical Dawn</div>
-			<div class="col-lg-3 srtime">04:45</div>
-			<div class="col-lg-3 srtime">05:09</div>
-		</div>
-
-		<div class="row twilight">
-			<div class="col-lg-6 srname">Nautical Dawn</div>
-			<div class="col-lg-3 srtime">05:09</div>
-			<div class="col-lg-3 srtime">05:34</div>
-		</div>
-
-		<div class="row twilight">
-			<div class="col-lg-6 srname">Civil Dawn</div>
-			<div class="col-lg-3 srtime">05:34</div>
-			<div class="col-lg-3 srtime">05:55</div>
-		</div>
-
-		<div class="row sunphase">
-			<div class="col-lg-6 srname">Sunrise</div>
-			<div class="col-lg-3 srtime">05:55</div>
-			<div class="col-lg-3 srtime">05:57</div>
-		</div>
-
-		<div class="row daylight">
-			<div class="col-lg-6 srname">Daylight</div>
-			<div class="col-lg-3 srtime">05:57</div>
-			<div class="col-lg-3 srtime">17:50</div>
-		</div>
-
-		<div class="row sunphase">
-			<div class="col-lg-6 srname">Sunset</div>
-			<div class="col-lg-3 srtime">17:50</div>
-			<div class="col-lg-3 srtime">17:52</div>
-		</div>
-
-		<div class="row twilight">
-			<div class="col-lg-6 srname">Civil Dusk</div>
-			<div class="col-lg-3 srtime">17:52</div>
-			<div class="col-lg-3 srtime">18:13</div>
-		</div>
-
-		<div class="row twilight">
-			<div class="col-lg-6 srname">Nautical Dusk</div>
-			<div class="col-lg-3 srtime">18:13</div>
-			<div class="col-lg-3 srtime">18:38</div>
-		</div>
-
-		<div class="row twilight">
-			<div class="col-lg-6 srname">Astronomical Dusk</div>
-			<div class="col-lg-3 srtime">18:38</div>
-			<div class="col-lg-3 srtime">19:02</div>
-		</div>
-
-		<div class="row night">
-			<div class="col-lg-6 srname">Night</div>
-			<div class="col-lg-3 srtime">19:02</div>
-			<div class="col-lg-3 srtime">00:00</div>
-		</div>
-	</div>
--->
-<!--
-	 <i class="glyphicon glyphicon-time" id="stoggle"></i>
 -->
