@@ -94,7 +94,7 @@ Template.content.helpers({
 		var lat = (loc && loc.lat) ? loc.lat : null;
 		var lng = (loc && loc.lng) ? loc.lng : null;
 
-		var dt = (loc && loc.display) ? loc.display.split("-").join("").split(" ").join("").split(".").join("").split(",").join("") : null;		
+		var dt = (loc && loc.display) ? loc.display.split("-").join("").split(" ").join("").split(".").join("").split(",").join("") : null;
 		if (dt) {
 			GoogleMaps.init({'sensor': true}, function () {
 				var mapOptions = {
